@@ -4,19 +4,18 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    namespace 'com.mobnetic.compose.advancedpreview.sample'
+
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.mobnetic.compose.advancedpreview"
+        applicationId "com.mobnetic.compose.advancedpreview.sample"
         minSdk 21
-        targetSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
     }
 
     buildTypes {
@@ -30,15 +29,13 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
-        useIR = true
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion kotlin_version
+        kotlinCompilerExtensionVersion compose_compiler_version
     }
     packagingOptions {
         resources {

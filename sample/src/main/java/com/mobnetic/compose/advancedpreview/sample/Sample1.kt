@@ -1,6 +1,7 @@
 package com.mobnetic.compose.advancedpreview.sample
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
@@ -41,8 +42,12 @@ private fun SampleScreen1() {
                 navigationIcon = { CloseButton() }
             )
         }
-    ) {
-        Box(Modifier.verticalScroll(state = rememberScrollState())) {
+    ) { contentPadding ->
+        Box(
+            modifier = Modifier
+                .verticalScroll(state = rememberScrollState())
+                .padding(contentPadding)
+        ) {
             LoremIpsumText(220)
         }
     }

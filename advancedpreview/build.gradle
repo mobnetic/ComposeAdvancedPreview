@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    namespace 'com.mobnetic.compose.advancedpreview'
+
+    compileSdk 34
 
     defaultConfig {
         minSdk 21
-        targetSdk 31
-        versionCode 1
-        versionName "0.1.0"
+        targetSdk 34
 
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -27,16 +27,13 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
-        useIR = true
-        freeCompilerArgs += "-Xjvm-default=all"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion kotlin_version
+        kotlinCompilerExtensionVersion compose_compiler_version
     }
     packagingOptions {
         resources {
